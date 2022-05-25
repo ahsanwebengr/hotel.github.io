@@ -1,0 +1,581 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;0,700;1,300;1,500;1,800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500;600;700&display=swap');
+:root{
+    --brnad-one : #021832;
+    --brand-two: #caa169;
+    --white-text : #f4f4f4;
+    --white: #ffff;
+    --black: #000;
+    --black-text: #15151515;
+    --gray: #e4e4e4;
+    --transition : all 400ms ease-in 0s;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+html{
+    font-size: 62.5%;
+    overflow-x: hidden;
+}
+html ::-webkit-scrollbar{
+    width: 0.6rem;
+}
+html ::-webkit-scrollbar-thumb{
+    background-color: var(--brnad-one);
+}
+html ::-webkit-scrollbar-track{
+    background-color: var(--brand-two);
+}
+a{
+    text-decoration: none;
+}
+ul{
+    list-style: none;
+}
+section{
+    padding: 9rem 0;
+}
+img{
+    width: 100%;
+}
+body{
+    line-height: 1.7;
+    
+    font-family: 'Poppins', sans-serif;
+}
+h1,h2,h3,h4,h5,h6{
+    font-weight: 700;
+    font-family: 'Oswald', sans-serif;
+
+}
+p{
+    font-size: 1.4rem;
+    max-width: 50rem;
+    margin-bottom: 1.5rem;
+    line-height: 2.5rem;
+}
+/* INTRO  */
+.intro{
+    text-align: center;
+    margin-bottom: 4rem;
+}
+.intro h6{
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    font-weight: 400;
+    margin-bottom: 1rem;
+}
+.intro h5{
+    text-transform: capitalize;
+    font-size: 2.8rem;
+    font-weight: 700;  
+    margin-bottom: 1rem;
+}
+/* BTN  */
+.btn{
+    padding: 0.8rem 1.8rem;
+    font-size: 1.5rem;
+    font-weight: 700;
+    text-transform: capitalize;
+    border-radius: 3rem;
+    display: inline;
+}
+.btn-brand{
+    background:var(--white) ;
+    color: var(--black);
+    border: 0.1rem solid var(--black);
+    transition: var(--transition);
+}
+.btn-brand:focus{
+    outline: none;
+    box-shadow: none !important;
+}
+.btn-brand:hover{
+    color: var(--white);
+    background-color: var(--brand-two);
+    border: 0.1rem solid var(--white);
+}
+/* NAVBAR */
+.navbar{
+    padding: 2rem 0;
+    z-index: 999;
+    background-color: var(--white);
+    border-bottom: 0.1rem solid var(--black-text);
+    box-shadow:1rem 1rem 6rem rgba(0, 0, 0, 0.4);
+    
+}
+.navbar .nav-item{
+    margin: 0 0.5rem;
+}
+.navbar .nav-link{
+    text-transform: capitalize;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--black);
+    display: inline;
+    transition: var(--transition);
+}
+.navbar .nav-link:hover,
+.navbar .nav-link.active{
+    color: var(--brand-two) !important;
+}
+.navbar .navbar-toggler:focus{
+    outline: none;
+    box-shadow: none !important;
+    border: none;
+}
+/* HOME */
+.home{
+    padding: 0 !important;
+}
+.home .slide{
+    height: 100vh;
+    width: 100%;
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.home .slide .main-content h1{
+    font-size: 4.8rem;
+    color: var(--white-text);
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+}
+.home .slide .main-content p{
+    margin: 0 auto;
+    color: var(--white-text);
+    max-width: 75rem;
+}
+.owl-dot,
+.owl-nav{
+    visibility: hidden;
+}
+.booking-area{
+    background-color: var(--white);
+    box-shadow: 1rem 1.5rem 0 rgba(0 0 0 / 10%);
+    padding: 5rem 3rem;
+    margin-top: -12rem;
+    z-index: 99;
+    position: relative;
+}
+
+/* ABOUT */
+.about h3{
+    font-size: 3.6rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    color: var(--black);
+}
+.about h3 span{
+    color: var(--brand-two);
+}
+/* ROOMS */
+.rooms .rooms-card{
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.rooms .rooms-card::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: var(--black);
+    opacity: 0;
+    z-index: 1;
+    transition: var(--transition);
+}
+.rooms .rooms-card:hover::before{
+    opacity: 0.5;
+}
+.rooms .rooms-card:hover .room-info{
+    opacity: 1;
+    z-index: 10;
+
+}
+.rooms .rooms-card:hover .room-img img{
+    transform: scale3d(1.05,1.05,1.05);
+}
+.rooms .rooms-card .room-info{
+    border: 0.1rem solid var(--white);
+    padding: 6rem 2rem;
+    opacity: 0;
+    position: absolute;
+    top: 10%;
+    left: 5%;
+    right: 5%;
+    transition: var(--transition);
+}
+.rooms .rooms-card .room-info h5{
+    font-size: 2rem;
+    text-decoration: underline;
+    margin-bottom: 2rem;
+    color: var(--white);
+    text-transform: capitalize;
+}
+.rooms .rooms-card .room-info p{
+    font-size: 1.3rem;
+    margin: 1rem 0;
+    color: var(--white);
+    max-width: 25rem;
+}
+.rooms .rooms-card .room-info small{
+    font-size: 1.4rem;
+    font-weight: 900;
+    margin-bottom: 2rem;
+    color: var(--white);
+}
+.rooms .rooms-card .room-info .buton{
+    margin: 4rem 0;
+}
+.rooms .rooms-card .room-info .buton .btn-brand{
+    background-color:transparent ;
+    color: var(--white);
+    border-color: var(--white);
+}
+.rooms .rooms-card .room-info .buton .btn-brand:hover{
+    background-color:var(--brand-two);
+    color: var(--white);
+}
+
+
+
+/* SERVICES */
+.services .service-item{
+    background-color: var(--white-text);
+}
+.service-menu ul li a{
+    display: block;
+    margin-bottom: 3rem;
+    color: var(--black);
+}
+.service-menu ul li a h5{
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+}
+.service-menu ul li a .service-icon{
+    width: 8rem;
+    height: 8rem;
+    border-radius: 100%;
+    background-color: var(--brand-two);
+    line-height: 8rem;
+    text-align: center;
+    float:left;
+    transition: var(--transition);
+    margin-right: 2rem;
+
+}
+.service-menu ul li a .service-icon img{
+    width: unset;
+}
+.service-menu ul li a .service-icon:hover,
+.service-menu ul li a.active .service-icon{
+    background-color: var(--brnad-one);
+    color: var(--white-text);
+    box-shadow: rgba(34 30 31 / 40%);
+}
+.service-menu ul li:nth-child(1){
+    margin-left: 0.9rem;
+}
+.service-menu ul li:nth-child(2){
+    margin-left: -4.5rem;
+}
+.service-menu ul li:nth-child(3){
+    margin-left: -7.8rem;
+}
+.service-menu ul li:nth-child(4){
+    margin-left: -11.8rem;
+}
+.service-menu p span{
+    color: var(--brand-two);
+}
+/* MILESTONE */
+.milestone{
+    background-image: linear-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.4)), url(/img/counter-bg.webp);
+    padding: 5rem 0;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed;
+}
+.milestone .counter h3,
+.milestone .counter small{
+    color: var(--white);
+}
+.milestone .counter h3{
+    font-size: 3.2rem;
+}
+.milestone .counter small{
+    font-size: 1rem;
+}
+/* TEAM  */
+.team .team-card{
+    position: relative;
+    overflow: hidden;
+    transition: var(--transition);
+}
+.team .team-card .team-info{
+    position: absolute;
+    bottom: -3rem;
+    left: 0;
+    right: 0;
+    background-color: var(--brand-two);
+}
+.team .team-card .team-info:hover{
+    bottom: 0rem;    
+}
+.team .team-card .team-info:hover .social-icons{
+    visibility: visible;
+} 
+.team .team-card .team-info h5{
+    color: var(--white);
+    font-size: 2.4rem;
+    text-transform: capitalize;
+    margin: 0.7rem 0;
+    font-weight: 600;
+}
+.team .team-card .team-info small{
+    color: var(--white);
+    font-size: 1.1rem;
+    text-transform: capitalize;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+}
+.team .team-card .social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--brnad-one);
+    visibility: hidden;
+}
+.team .team-card .social-icons i{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--white);
+    font-size: 2.4rem;
+    width: 4rem;
+    height: 4rem;
+    margin:0.6rem;
+    border-radius: 50%;
+    border:0.2rem solid var(--white);
+}
+.team .team-card .social-icons i:hover{
+    color: var(--brnad-one);
+    background-color: var(--white);
+}
+/** GALLERY **/
+.gallery .gallery-item{
+    box-shadow: 0 0 0.8rem rgba(0, 0, 0, 0.3);
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+}
+.gallery .gallery-item::before,
+.gallery .gallery-item::after,
+.gallery .gallery-content::before,
+.gallery .gallery-content::after{
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background-color: rgba(0, 0, 0, 0.5);
+    top: 0;
+    left: 0;
+    opacity: 0;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+.gallery .gallery-item::after{
+    top: 50%; 
+}
+.gallery .gallery-item:hover::after{
+    top: 0;
+    opacity: 1;
+}
+.gallery .gallery-item:hover::before{
+    left: 50%;
+    opacity: 1;
+}
+.gallery .gallery-content{
+    position:absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    opacity: 0;
+    z-index: 1;
+    transition: var(--transition);
+    -webkit-transition: var(--transition);
+}
+.gallery .gallery-item:hover .gallery-content{
+    opacity: 1;
+}
+.gallery .gallery-content::before,
+.gallery .gallery-content::after{
+    top: 0;
+    left: 50%;
+    z-index: -1;
+}
+.gallery .gallery-content::before{
+    top: 50%;
+    opacity: 1;
+}
+.gallery .gallery-content::after{
+    top: 50%;
+}
+.gallery .gallery-item:hover .gallery-content::after{
+    opacity: 1;
+    left: 0;
+}
+/* PRICING */
+.pricing .pricing-table{
+    border: 0.2rem solid rgba(0, 0, 0, 0.3);
+    box-shadow: 0 0.3rem 0.6rem rgb(34 30 31 /40%);
+    cursor: pointer;
+    border-radius: 0.5rem;
+    padding: 5rem 1.8rem;
+    transition: var(--transition);
+}
+.pricing .pricing-table:hover{
+    background-color: var(--brand-two);
+    color: var(--white);
+}
+.pricing .pricing-table h4{
+    margin-top: 0rem;
+    margin-bottom: 2rem;
+    font-size: 2.8rem;
+    text-decoration: underline;
+    text-align: center;
+}
+.pricing .pricing-table ul li{
+    font-size: 1.5rem;
+    transition: var(--transition);
+}
+.pricing .pricing-table ul li:hover i{
+    transform: translate(0.6rem);
+    color: var(--brnad-one);
+}
+.pricing .pricing-table strong{
+    font-size: 2.6rem;
+    font-weight: 900;
+}
+.pricing .pricing-table strong small{
+    font-size: 1rem;
+}
+.pricing .pricing-table .button{
+    text-align: center;
+    margin-top: 3.8rem;
+}
+.pricing .pricing-table .button .btn{
+    padding: 0.8rem 4.8rem;   
+}
+/* BLOG */
+.blog .blog-content{
+    margin: -6rem 0 0 5rem;
+    box-shadow: 0 0.3rem 0.6rem rgb(34 30 31 /40%);
+}
+.blog .blog-content h5{
+    font-size: 2.6rem;
+    text-decoration: underline;
+    margin-bottom: 0.5rem;
+}
+.blog .blog-content h6{
+    font-size: 1.6rem;
+    margin-top: 1rem;
+    font-weight: 500;
+}
+.blog .blog-content p{
+    margin-top: 0.8rem;
+    font-size: 1.2rem;
+}
+/*Brand*/
+.brand{
+    background-color: var(--white-text);
+}
+/* FOOTER */
+footer h4{
+    font-size: 2.6rem;
+    margin: 1rem 0;
+}
+.address li{
+    color: var(--brand-two);
+    font-size: 1.2rem;
+}
+footer ul li{
+    font-size: 1.2rem;
+    color: var(--white);
+    transition: var(--transition);
+}
+footer .hotel ul li:hover i{
+    transform: translate(0);
+}
+footer ul li:hover i{
+    transform: translate(1rem);
+}
+footer .form-control{
+    background-color: var(--black);
+    padding: 1rem;
+    color: var(--white) !important;
+    font-size: 1.2rem;
+    border-radius: 0.4rem;
+}
+footer .form-control:focus{
+    background-color: var(--black);
+    border: 0.1rem solid var(--brand-two)  ;
+    box-shadow: none;
+}
+footer button{
+    padding: 1rem 2.5rem;
+    background-color: transparent;
+    border: 0.1rem solid white;
+    color: var(--white);
+    text-transform: uppercase;
+    margin: 1.2rem 0;
+    border-radius: 0.4rem;
+    transition: var(--transition);
+}
+footer button:hover{
+    background-color: var(--brand-two);
+    color: var(--white);
+}
+
+footer .social-icons{
+    display: flex;
+    align-items: center;
+    justify-content: start; 
+}
+footer .social-icons i{
+    color: var(--white);
+    border: 0.1rem solid var(--white);
+    border-radius: 50%;
+    width: 2.4rem;
+    height: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 0.3rem;
+    transition: var(--transition);
+}
+footer .social-icons i:hover{
+    background-color: var(--white);
+    color: var(--black);
+}
+.credit{
+    font-weight: 700;
+    padding: 1rem 0;
+    font-size: 1.6rem;
+}
+.credit p span{
+    color: var(--brand-two);
+    cursor: pointer;
+}
